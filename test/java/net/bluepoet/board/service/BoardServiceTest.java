@@ -39,7 +39,7 @@ public class BoardServiceTest {
 
 	@Test
 	@DatabaseSetup(value = "config/EXPECTED_ADD_BOARD.xml", type = DatabaseOperation.CLEAN_INSERT)
-	public void getList() throws Exception {
+	public void getList() {
 		// Given
 		// When
 		List<Article> articles = boardService.getList();
@@ -49,7 +49,7 @@ public class BoardServiceTest {
 	}
 
 	@Test
-	public void getArticle() throws Exception {
+	public void getArticle() {
 		// Given
 		// When
 		Article article = boardService.getArticle(1);
@@ -63,7 +63,7 @@ public class BoardServiceTest {
 
 	@Test
 	@ExpectedDatabase(assertionMode = DatabaseAssertionMode.NON_STRICT, value = "config/EXPECTED_ADD_BOARD.xml")
-	public void save() throws Exception {
+	public void save() {
 		// Given
 		Article article = createArticle(2, "게시판", "내용입니다.", "rucy");
 
@@ -73,7 +73,7 @@ public class BoardServiceTest {
 
 	@Test
 	@ExpectedDatabase(assertionMode = DatabaseAssertionMode.NON_STRICT, value = "config/EXPECTED_UPDATE_BOARD_AUTHOR_TOM.xml")
-	public void update_수정한사람이tom_점수확인() throws Exception {
+	public void update_수정한사람이tom_점수확인() {
 		// Given
 		Article article = createArticle(1, "수정된 게시판", "수정된 내용입니다", "tom");
 
@@ -83,7 +83,7 @@ public class BoardServiceTest {
 
 	@Test
 	@ExpectedDatabase(assertionMode = DatabaseAssertionMode.NON_STRICT, value = "config/EXPECTED_UPDATE_BOARD_AUTHOR_BLUEPOET1004.xml")
-	public void update_수정한사람이bluepoet1004_점수확인() throws Exception {
+	public void update_수정한사람이bluepoet1004_점수확인() {
 		// Given
 		Article article = createArticle(1, "수정된 게시판", "수정된 내용입니다", "bluepoet1004");
 
@@ -93,7 +93,7 @@ public class BoardServiceTest {
 
 	@Test
 	@ExpectedDatabase(assertionMode = DatabaseAssertionMode.NON_STRICT, value = "config/EXPECTED_UPDATE_BOARD_AUTHOR_RUCY.xml")
-	public void update_수정한사람이rucy_점수확인() throws Exception {
+	public void update_수정한사람이rucy_점수확인() {
 		// Given
 		Article article = createArticle(1, "수정된 게시판", "수정된 내용입니다", "rucy");
 
@@ -103,7 +103,7 @@ public class BoardServiceTest {
 
 	@Test
 	@ExpectedDatabase(assertionMode = DatabaseAssertionMode.NON_STRICT, value = "config/EXPECTED_EMPTY_BOARD.xml")
-	public void delete() throws Exception {
+	public void delete() {
 		// Given
 		// When
 		boardService.delete(1);
