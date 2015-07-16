@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<BOARD article_no="1" title="테스트" content="테스트내용입니다."  author="bluepoet" />
+	<BOARD article_no="2" title="게시판" content="내용입니다."  author="rucy" />
+</dataset>
